@@ -1,0 +1,337 @@
+.App {
+    justify-content: center;
+    align-items: center;
+    width: 750px;
+    height: 700px;
+    text-align: center;
+    background: linear-gradient(
+        to right,
+        rgb(41, 171, 189) 0%,
+        rgb(140, 155, 180) 100%
+    );
+    border-radius: 15px;
+    flex-direction: column;
+}
+.title {
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000000;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    margin: 10px;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: calc(100% - 40px);
+    overflow-y: auto;
+    margin-top: 75px;
+    padding: 2%;
+}
+
+.item {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 90%;
+    height: 50px;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin-top: 15px;
+}
+.update {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    background-color: rgb(211, 211, 62);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 25px;
+    margin-right: 10px;
+}
+.add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    color: rgb(14, 12, 12);
+    font-size: 65px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+.add:hover {
+    animation: grow 0.1s linear forwards;
+    animation: bacgroundColor 0.5s linear forwards;
+}
+.delete:hover {
+    animation: grow 0.1s linear forwards;
+}
+.update:hover {
+    animation: grow 0.1s linear forwards;
+}
+
+@keyframes bacgroundColor {
+    to {
+        background-color: green;
+    }
+}
+@keyframes grow {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+.loader {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 300px;
+    right: 630px;
+
+    transform: translate(-50%, -50%);
+
+    width: 100px;
+    height: 100px;
+    border: 10px solid #2132ca;
+    border-top: 10px solid #333;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(84, 99, 99, 0.863);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.692);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.modal-input {
+    width: 90%;
+    height: 30px;
+    border-radius: 10px;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    background: rgb(148, 172, 185);
+}
+
+.modal-button {
+    width: 100%;
+    height: 30px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.errorWindow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: rgb(194, 19, 19);
+}
+.closeErrorWindow {
+    width: 100px;
+    height: 40px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.closeErrorWindow:hover {
+    animation: grow2 0.5s linear forwards;
+}
+
+.modal-button:hover {
+    animation: grow2 0.5s linear forwards;
+}
+
+@keyframes grow2 {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+.errorWindow h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 500px;
+    height: 100px;
+    font-size: 20px;
+    background: #f9fafabb;
+}
+.empty {
+    color: aliceblue;
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000000;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    margin-top: 40%;
+}
+.serch-sort-module {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 90%;
+    height: 50px;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.search-input {
+    flex-direction: column;
+    width: 500px;
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin: 0;
+    border: none;
+    outline: none;
+    font-size: 20px;
+}
+
+.serch-button {
+    width: 100px;
+    height: 50px;
+    background-color: #18588b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 15px;
+}
+.serch-button:hover {
+    animation: grow2 0.5s linear forwards;
+}
+
+.sort-default {
+    width: 100px;
+    height: 50px;
+    background-color: #18588b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+.sort-reverse {
+    width: 100px;
+    height: 50px;
+    background-color: #18588b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 15px;
+}
+.delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    background-color: #dd1111;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 25px;
+}
+.delete-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 50px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 25px;
+}
+.delete-all:hover {
+    animation: grow2 0.5s linear forwards;
+}
